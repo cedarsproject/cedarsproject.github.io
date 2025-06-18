@@ -1,170 +1,100 @@
-/* Base and background */
-body {
+/* Base Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
   font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #2e3d26, #4a3b24, #2e3d26);
-  color: #d4d0c8;
+  background: #1f1f1f;
+  color: #f0f0f0;
   line-height: 1.6;
+  padding: 2rem;
 }
 
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-/* Main heading */
-h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 0.2em;
-  color: #a6b68a; /* soft cedar green */
-  text-shadow: 1px 1px 3px #1c1f13;
-}
-
-/* Tagline */
-.tagline {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #b9b59f;
-  margin-bottom: 3rem;
-  font-style: italic;
-}
-
-/* Hero three columns */
+/* Hero Section */
 .hero {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-
-.book {
-  background: rgba(68, 56, 38, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem 1rem;
-  flex: 1;
-  box-shadow: 0 4px 8px rgba(20, 15, 5, 0.7);
-  transition: background-color 0.3s ease;
-  cursor: default;
-}
-
-.book h2 {
-  color: #c0d7a4; /* lighter green */
-  font-size: 1.8rem;
-  margin-top: 0;
-  margin-bottom: 0.3em;
-  cursor: pointer;
-  user-select: none;
-}
-
-.book h3 {
-  font-weight: normal;
-  font-size: 1rem;
-  color: #d9d6c3;
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-style: italic;
-}
-
-/* Blurb text */
-.blurb {
-  font-size: 0.9rem;
-  color: #ddd7c9;
-  line-height: 1.4;
-  display: none;
-  margin-top: 0.5em;
-  border-top: 1px solid #5a4a28;
-  padding-top: 0.5em;
-}
-
-/* Single column section below hero */
-.single-column {
-  background: rgba(51, 42, 21, 0.85);
-  border-radius: 10px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(30, 25, 10, 0.8);
+  gap: 2rem;
   margin-bottom: 3rem;
-  color: #c3c0aa;
 }
 
-.single-column h2 {
-  font-size: 2.5rem;
-  color: #a6b68a;
-  margin-top: 0;
-  margin-bottom: 0.3em;
-  text-align: center;
-  user-select: none;
+.column {
+  flex: 1;
+  background: #2e2e2e;
+  padding: 1.5rem;
+  border-left: 4px solid #5a7d5a; /* muted green */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
-.single-column h3 {
-  font-style: italic;
-  font-weight: normal;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: #b9b59f;
+.column:hover {
+  background: #3a3a3a;
 }
 
-/* Prompts toggle button */
-#togglePromptsBtn {
-  display: block;
-  margin: 0 auto 1rem auto;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  background-color: #6a5c33;
-  color: #ddd7c9;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(30, 25, 10, 0.8);
-  transition: background-color 0.3s ease;
-}
-
-#togglePromptsBtn:hover {
-  background-color: #8b7d42;
-}
-
-/* Prompts container */
-#promptsContainer {
-  background: rgba(43, 34, 15, 0.85);
-  border-radius: 10px;
-  padding: 1.5rem 2rem;
-  color: #c7c5b0;
-  font-size: 0.9rem;
-  max-height: 600px;
-  overflow-y: auto;
-  box-shadow: inset 0 0 10px #4b4620;
-}
-
-/* Individual collapsible book prompt sections */
-.prompt-section {
-  margin-bottom: 1.5rem;
-}
-
-.prompt-section h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  cursor: pointer;
-  user-select: none;
-  color: #b4b08a;
+/* Title Headings */
+h1, h2 {
   font-weight: bold;
-  text-decoration: underline;
+  margin-bottom: 1rem;
+  color: #dcdcdc;
 }
 
-/* Prompt lists */
-.prompt-section ul {
-  margin: 0;
-  padding-left: 1.2rem;
+/* Taglines */
+.tagline {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+/* Blurb Toggle */
+.blurb {
   display: none;
-  list-style-type: disc;
-  color: #ddd9c6;
+  margin-top: 1rem;
+  color: #eee;
 }
 
-/* Scrollbar for prompts container */
-#promptsContainer::-webkit-scrollbar {
-  width: 8px;
+.toggle-button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #5a7d5a;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-#prompts
+.toggle-button:hover {
+  background: #6d966d;
+}
+
+/* Behind the Cedars Section */
+.behind-section {
+  margin-top: 4rem;
+  background: #2d2a2a;
+  padding: 2rem;
+  border-left: 6px solid #856d5f; /* earthy brown */
+  border-radius: 10px;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ccbbaa;
+}
+
+.details pre {
+  white-space: pre-wrap;
+  background: #1a1a1a;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid #5a7d5a;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
