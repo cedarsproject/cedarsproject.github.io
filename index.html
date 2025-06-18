@@ -1,138 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Cedars Project</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-  body {
-    margin: 0;
-    background: linear-gradient(135deg, #2a2f21, #3a3d2e 40%, #5a4b30);
-    font-family: 'Playfair Display', serif;
-    color: #d8d5c9;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0;
-    text-align: center;
-  }
-  .tagline-main {
-    font-size: 1.2rem;
-    margin-top: 0.2rem;
-    margin-bottom: 3rem;
-    font-style: italic;
-    color: #a6a38c;
-    text-align: center;
-  }
-  .hero {
-    display: flex;
-    gap: 2rem;
-    max-width: 1000px;
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-  .book {
-    flex: 1;
-    background: rgba(70, 80, 53, 0.6);
-    border-radius: 10px;
-    padding: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 0 10px #3f3d29;
-    transition: background 0.3s ease;
-  }
-  .book:hover {
-    background: rgba(90, 100, 70, 0.8);
-  }
-  .book h2 {
-    margin-top: 0;
-    <!-- Before -->
-    <div class="book" id="before-book">
-      <h2>Before the Cedar of Lebanon</h2>
-      <div class="tagline">Isaac and Leyla discover events that took place before the cedar was planted</div>
-      <div class="blurb" id="before-blurb">
-        We pick up the story of Isaac and Leyla where we left off in Oxfordshire but their world begins to open out a little, by necessity for the continuing engagement with the reader but also because that's naturally where the story takes them. Early in the book they meet an interesting character, a gold dealer who is based upon a real-life jeweller near my home in Staffordshire. Of course the real chap is not shady in the slightest but it is the conversations I have with him in real life that are fearlessly interesting. Any reader that has an Ancestry account will appreciate the characters' desire to explore their family history. The story covers a few interesting time periods and I've tried, where possible, to anchor the story in an embellished reality. The book unfolded before me at much the same pace as the reader will encounter it. In the same manner as the first book of the series I had no idea where the story was going at times and was as interested as the reader might be in following along and finding out.
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cedars Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>The Cedars Project</h1>
+    <p class="subtitle">A trilogy of novellas celebrating life, love, faith and hope</p>
+  </header>  <main>
+    <section class="hero">
+      <div class="book" onclick="toggleBlurb('beneath')">
+        <h2>Beneath the Cedars of Lebanon</h2>
+        <p class="tagline">Isaac and Leyla meet beneath an established cedar in Oxfordshire</p>
+        <div id="beneath" class="blurb hidden">
+          <p>The story predictably starts beneath a tree... [full blurb inserted here]</p>
+        </div>
       </div>
-    </div>
-
-    <!-- By -->
-    <div class="book" id="by-book">
-      <h2>By the Cedars of Lebanon</h2>
-      <div class="tagline">Isaac and Leyla continue their story by the cedar of Lebanon</div>
-      <div class="blurb" id="by-blurb">
-        Continuing the grounding of the story in an embellished version of reality we have a first chapter that I hope will not be contentious. Firstly I have to say that the third book contains everything that I love, and so it should, how could I view the trilogy as a love story if it didn't? So we start in Wolverhampton in the place that I love and we meet a set of executives from the brewery who are about to set out on a new venture. Whilst the venture and the Wolverhampton location are real the whole premise, the meeting and the decisions that take place are, in fact, totally made up. It paints the brewery at the time as very forward thinking, astute even and innovative. I hope they appreciate the necessity of including their name so that the story didn't seem entirely ridiculous. If they take time out to read the book they'll understand why the building is absolutely essential, there literally cannot be a story without it and to choose any other building in the world would have been sacrificing the opportunity to tell this beautiful story. From Chapter 1 onwards the story rapidly draws to a conclusion our standard 21 chapters later with the kind of twists and turns you'd expect along the way if you've read this far.
+      <div class="book" onclick="toggleBlurb('before')">
+        <h2>Before the Cedar of Lebanon</h2>
+        <p class="tagline">Isaac and Leyla discover events that took place before the cedar was planted</p>
+        <div id="before" class="blurb hidden">
+          <p>We pick up the story of Isaac and Leyla... [full blurb inserted here]</p>
+        </div>
       </div>
-    </div>
+      <div class="book" onclick="toggleBlurb('by')">
+        <h2>By the Cedars of Lebanon</h2>
+        <p class="tagline">Isaac and Leyla continue their story by the cedar of Lebanon</p>
+        <div id="by" class="blurb hidden">
+          <p>Continuing the grounding of the story... [full blurb inserted here]</p>
+        </div>
+      </div>
+    </section><section class="behind">
+  <h2>Behind the Cedars of Lebanon</h2>
+  <p class="tagline">How these books came to be — and the prompts that shaped them</p>
+  <div class="prompt-section">
+    <button onclick="togglePrompts('beneath-prompts')">Beneath Prompts (Spoilers!)</button>
+    <ul id="beneath-prompts" class="prompt-list hidden">
+      <li>[Prompt 1]</li>
+      <li>[Prompt 2]</li>
+      <!-- ...more prompts... -->
+    </ul>
+
+    <button onclick="togglePrompts('before-prompts')">Before Prompts (Spoilers!)</button>
+    <ul id="before-prompts" class="prompt-list hidden">
+      <li>[Prompt 1]</li>
+      <!-- ... -->
+    </ul>
+
+    <button onclick="togglePrompts('by-prompts')">By Prompts (Spoilers!)</button>
+    <ul id="by-prompts" class="prompt-list hidden">
+      <li>[Prompt 1]</li>
+      <!-- ... -->
+    </ul>
   </div>
+</section>
 
-  <!-- Behind the Cedars section -->
-  <h2 style="margin-top: 4rem; text-align:center; color:#d0cda8;">Behind the Cedars of Lebanon</h2>
-  <div style="max-width: 800px; background: rgba(70, 80, 53, 0.7); border-radius: 10px; padding: 1rem; margin: 1rem auto; color: #ccc;">
-    <p>
-      This section contains prompts and interactions with ChatGPT that helped imagine, compile, and edit the stories.<br />
-      <strong>Warning:</strong> These prompts contain <em>spoilers</em> and are hidden by default.
-    </p>
-    <button id="togglePromptsBtn" style="background:#4a532d; border:none; padding: 0.5rem 1rem; color:#d8d5c9; cursor:pointer; border-radius: 5px;">
-      Show/Hide Prompts
-    </button>
-    <div id="promptsContainer" style="display:none; margin-top:1rem; max-height: 400px; overflow-y: auto; background: #32382a; padding: 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.4;">
-      <!-- Placeholder for prompts list per book -->
-      <h3>Beneath Prompts</h3>
-      <ul>
-        <!-- Example prompt -->
-        <li>Prompt 1 for Beneath...</li>
-        <li>Prompt 2 for Beneath...</li>
-        <!-- ... up to 30-35 prompts -->
-      </ul>
-      <h3>Before Prompts</h3>
-      <ul>
-        <li>Prompt 1 for Before...</li>
-        <li>Prompt 2 for Before...</li>
-      </ul>
-      <h3>By Prompts</h3>
-      <ul>
-        <li>Prompt 1 for By...</li>
-        <li>Prompt 2 for By...</li>
-      </ul>
-    </div>
-  </div>
-  <script>
-    // Toggle blurbs under each book title on click
-    document.querySelectorAll('.book h2').forEach(title => {
-      title.style.cursor = 'pointer';
-      title.addEventListener('click', () => {
-        const blurb = title.nextElementSibling.nextElementSibling;
-        if (blurb.style.display === 'block') {
-          blurb.style.display = 'none';
-        } else {
-          blurb.style.display = 'block';
-        }
-      });
-    });
-
-    // Toggle the prompts container visibility
-    const togglePromptsBtn = document.getElementById('togglePromptsBtn');
-    const promptsContainer = document.getElementById('promptsContainer');
-
-    togglePromptsBtn.addEventListener('click', () => {
-      if (promptsContainer.style.display === 'block') {
-        promptsContainer.style.display = 'none';
-        togglePromptsBtn.textContent = 'Show Prompts';
-      } else {
-        promptsContainer.style.display = 'block';
-        togglePromptsBtn.textContent = 'Hide Prompts';
-      }
-    });
-
-    // Initially hide all blurbs
-    document.querySelectorAll('.blurb').forEach(blurb => {
-      blurb.style.display = 'none';
-    });
-  </script>
-</body>
+  </main>  <script>
+    function toggleBlurb(id) {
+      const blurb = document.getElementById(id);
+      blurb.classList.toggle('hidden');
+    }
+    function togglePrompts(id) {
+      const list = document.getElementById(id);
+      list.classList.toggle('hidden');
+    }
+  </script></body>
 </html>
